@@ -14,6 +14,9 @@ services:
       - wg0.conf
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
+    dns:
+      - 192.168.4.113
+      - 192.168.4.30
 
 secrets:
   wg0.conf:
