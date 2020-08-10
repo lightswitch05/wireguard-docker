@@ -2,7 +2,6 @@ version: '3.1'
 
 services:
   wireguard:
-    privileged: false
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
@@ -14,28 +13,6 @@ services:
       - wg0.conf
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
-
-#  wireguard-core:
-#    image: linuxserver/wireguard
-#    container_name: wireguard
-#    cap_add:
-#      - NET_ADMIN
-#      - SYS_MODULE
-#    environment:
-#      - PUID=1000
-#      - PGID=1000
-#      - PEERS=1
-#      - PEERDNS="192.168.4.113, 192.168.4.30"
-#      - TZ=America/New_York
-#    volumes:
-#      - ./secrets/wg0.conf:/config/wg0.conf
-#      - /lib/modules:/lib/modules
-#      - /usr/src:/usr/src
-#    ports:
-#      - 51820:51820/udp
-#    sysctls:
-#      - net.ipv4.conf.all.src_valid_mark=1
-#    restart: unless-stopped
 
 secrets:
   wg0.conf:
