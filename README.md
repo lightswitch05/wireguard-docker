@@ -5,7 +5,7 @@
 * Clone the repo and create a folder named `secrets`.
 * Create `wg0.conf` in secrets with all your wireguard configuration, see below for an example.
 * Modify `docker-compose.yaml` to put your DNS server IPs. Sorry for hardcoding mine, I didn't really intend to make this repo public.
-* Run `docker-compose -d up`
+* Run `docker-compose up -d`
 
 
 ### Example `wg0.conf`
